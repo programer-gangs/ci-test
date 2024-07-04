@@ -14,12 +14,6 @@ jobs:
       fail-fast: true
     steps:
       - name: Sending Dingtalk Message
-        uses: x-actions/dingtalk@master
-        env:
-          DINGTALK_ACCESS_TOKEN: 9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
-          MSGTYPE: markdown
-          TITLE: "x-actions dingtalk message CI"
-          TEXT: |
-            # Noti
-            > Build Github Action Done.
-            > ^_^
+        uses: programer-gangs/dingtalk-action@master
+        with:
+          token: 9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
