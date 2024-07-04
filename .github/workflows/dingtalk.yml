@@ -1,10 +1,17 @@
 name: 钉钉消息发送
 
-on: workflow_dispatch
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    strategy: 
+      fail-fast: true
     steps:
       - name: dingtalk pre message
         uses: fifsky/dingtalk-action@master
@@ -18,7 +25,6 @@ jobs:
             > ^_^
       - name: dingtalk post robot message
         uses: fifsky/dingtalk-action@master
-        if: always()
         with:
           url: https://oapi.dingtalk.com/robot/send?access_token=9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
           type: markdown
