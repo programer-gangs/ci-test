@@ -13,23 +13,13 @@ jobs:
     strategy: 
       fail-fast: true
     steps:
-      - name: dingtalk pre message
-        uses: fifsky/dingtalk-action@master
-        with:
-          url: https://oapi.dingtalk.com/robot/send?access_token=9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
-          type: markdown
-          content: |
-            # Tips
-            ## Hello
-            > from github action message
-            > ^_^
-      - name: dingtalk post robot message
-        uses: fifsky/dingtalk-action@master
-        with:
-          url: https://oapi.dingtalk.com/robot/send?access_token=9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
-          type: markdown
-          content: |
-            # Tips
-            ## Hello
-            > from github action message
+      - name: Sending Dingtalk Message
+        uses: x-actions/dingtalk@master
+        env:
+          DINGTALK_ACCESS_TOKEN: 9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
+          MSGTYPE: markdown
+          TITLE: "x-actions dingtalk message"
+          TEXT: |
+            # Noti
+            > Build Github Action Done.
             > ^_^
