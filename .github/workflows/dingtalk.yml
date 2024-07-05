@@ -13,12 +13,12 @@ jobs:
     strategy: 
       fail-fast: true
     steps:
-      - name: Sending Dingtalk Message
+      - run: echo "🍏 This job's status is ${{ job.status }}." && exit 1
+      - name: Pre Sending Dingtalk Message
         uses: programer-gangs/dingtalk-action@v2.0
         with:
           token: 9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
-      - run: echo "🍏 This job's status is ${{ job.status }}." && exit 1
-      - name: Sending Dingtalk Message
+      - name: Post Sending Dingtalk Message
         uses: programer-gangs/dingtalk-action@v2.0
         if: ${{ always() }}
         with:
