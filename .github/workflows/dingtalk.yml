@@ -23,4 +23,4 @@ jobs:
         if: ${{ always() }}
         with:
           token: 9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
-          status: ${{ job.status == 'cancelled' && -2 || (job.status == 'success' && 0 || 1) }}
+          status: ${{ job.status }}
