@@ -14,12 +14,12 @@ jobs:
       fail-fast: true
     steps:
       - name: Sending Dingtalk Message
-        uses: programer-gangs/dingtalk-action@v1.0
+        uses: programer-gangs/dingtalk-action@v2.0
         with:
           token: 9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Sending Dingtalk Message
-        uses: programer-gangs/dingtalk-action@v1.0
+        uses: programer-gangs/dingtalk-action@v2.0
         if: ${{ always() }}
         with:
           token: 9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
