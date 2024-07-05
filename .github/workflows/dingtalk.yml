@@ -1,5 +1,4 @@
-name: 钉钉消息发送
-run-name: 钉钉消息发送
+name: 测试钉钉消息发送
 
 on: 
   push:
@@ -15,12 +14,12 @@ jobs:
       fail-fast: true
     steps:
       - name: Pre Sending Dingtalk Message
-        uses: programer-gangs/dingtalk-action@v2.0
+        uses: programer-gangs/dingtalk-action@v3.0
         with:
           token: 9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
       - run: echo "🍏 This job's status is ${{ toJSON(github) }}."
       - name: Post Sending Dingtalk Message
-        uses: programer-gangs/dingtalk-action@v2.0
+        uses: programer-gangs/dingtalk-action@v3.0
         if: ${{ always() }}
         with:
           token: 9ed506ea97a847cbfcc00b435f749a30e13cc5585a827332748853a9070ad8bc
