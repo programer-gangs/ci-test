@@ -2,6 +2,10 @@ name: 钉钉消息发送
 run-name: 钉钉消息发送
 
 on: 
+  # 仅在main分支工作
+  workflow_run:
+    branches:
+      - main
   push:
     branches:
       - main
